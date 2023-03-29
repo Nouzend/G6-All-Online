@@ -1,0 +1,140 @@
+.container {
+    margin-top: 30px;
+  }
+  .content-box{
+    width: 500px;
+    height: auto;
+    margin: 10px;
+    overflow: hidden;
+    font-size: 16px;
+  }
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-body {
+    padding: 10px 20px;
+  }
+  
+  .card-title {
+    font-weight: bold;
+  }
+  
+  .card-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: gray;
+  }
+
+  .green-tab {
+    width: 100%;
+    background-color: green;
+    color: white;
+    padding: 2px 8px;
+    display: block;
+  }
+  
+  .btns {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: lightgreen;
+    color: black;
+    border-radius: 10px;
+    border: none;
+    transition: 0.3s;
+  }
+  
+  .center{
+    text-align: center;
+  }
+
+  .image-box-E{
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    width: 450px;
+  }
+  .image-box-F{
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    width: 100px;
+  }
+  .image-box-O{
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    width: 350px;
+  }
+  .image-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+  }
+  .product-box {
+    width: 200px;
+    height: 350px;
+    text-align: center;
+    margin: 10px;
+    overflow: hidden;
+    font-size: 16px;
+  }
+  
+  .product-box img {
+    width: 250px;
+    object-fit: cover;
+  }
+  
+  .product-box .btn {
+    display: flex;
+  }
+
+  .rows-s {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-x {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+}
+
+.new-box {
+  background-color: lightgray;
+  width: auto;
+  height: 500px;
+  padding: 20px;
+}
+
+.price-promotion-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  font-weight: bold;
+  font-size: large;
+  margin-right: 20px;
+}
+
+.promotion {
+  font-style: italic;
+}
+
+.owl-stage-outer {
+  margin: -5px;
+  padding: 5px;
+}

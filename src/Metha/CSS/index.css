@@ -1,0 +1,10 @@
+.data-box {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.price-promotion-container {
+  display: flex;
+  justify-content: space-between;
+}
