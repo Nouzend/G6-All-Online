@@ -2,9 +2,9 @@ const mysql = require('mysql2/promise');
 //ท็อป
 const dbConfig = {
   host: 'ap-southeast.connect.psdb.cloud',
-  user: 'lxzt9cod1ddl3q61v6at',
-  password: 'pscale_pw_HC1U7gizymLc6HnEZ3v0aYTjpBldxLBUnNKXeAkl6r2',
-  database: 'db_project',
+  user: 'drkbhmjbe11da0sd5i3o',
+  password: 'pscale_pw_7uYjws4cDq2jkEsCO1ZATvWaYDOPTPogUgdfDLwwapM',
+  database: 'featuresall',
   ssl: { rejectUnauthorized: false },
 };
 

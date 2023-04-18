@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 const Getproducts = async (req, res) => {
   try {
     const conn = await connection;
-    const results = await conn.query("SELECT * FROM db_project.product");
+    const results = await conn.query("SELECT * FROM featuresall.product");
     res.send(results[0]);
   } catch (err) {
     res.status(500).send(err);
@@ -143,7 +143,7 @@ const loginAdmin =  async (req, res) => {
 const Getuser = async (req, res) => {
   try{
     const conn = await connection;
-    const result = await conn.query('select * from db_project.users ')
+    const result = await conn.query('select * from featuresall.users ')
     res.send(result[0]);
   }catch(err){
     console.log(err)

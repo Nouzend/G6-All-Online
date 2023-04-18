@@ -8,7 +8,7 @@ app.use(express.urlencoded());
 const GetpFont = async (req, res) => {
   try {
     const conn = await connection;
-    const results = await conn.query(`SELECT * FROM db_project.product where product_type = ?`,[req.params.productType]);
+    const results = await conn.query(`SELECT * FROM featuresall.product where product_type = ?`,[req.params.productType]);
     res.send(results[0]);
   } catch (err) {
     res.status(500).send(err);
@@ -20,7 +20,7 @@ const GetpFont = async (req, res) => {
 const Getproducts = async (req, res) => {
   try {
     const conn = await connection;
-    const results = await conn.query("SELECT * FROM db_project.product");
+    const results = await conn.query("SELECT * FROM featuresall.product");
     res.send(results[0]);
   } catch (err) {
     res.status(500).send(err);
