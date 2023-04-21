@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 import Example from "../../Metha/cart";
 import i18next from "i18next";
 
+//เมฆ
 const languages = [
   {
     code: "th",
