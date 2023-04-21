@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 import Example from "../../Metha/cart";
 import i18next from "i18next";
 
+//เมฆ
 const languages = [
   {
     code: "th",
@@ -52,7 +53,7 @@ const Search = ({ onSearch,CartItem,t,i18n }) => {
 
   return (
     <>
-    
+    {/* จ๋า */}
       <section className="search">
         <div className="container c_flex">
           <div className="logo width ">
