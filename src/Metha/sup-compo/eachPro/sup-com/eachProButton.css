@@ -1,0 +1,11 @@
+/* นางสาวศรุตยา  มากวิทย์ (นิว) */
+.btn-success{
+    background: #E74646;
+    color: #000000;
+    cursor: pointer;
+}
+.control-btn btn-success {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 40%;
+  }
