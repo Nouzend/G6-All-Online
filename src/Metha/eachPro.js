@@ -1,3 +1,4 @@
+//นางสาวศรุตยา  มากวิทย์ (นิว)
 import React, { useEffect, useState } from "react";
 import Product from "./sup-compo/eachPro/eachPro";
 import Form from "./sup-compo/eachPro/eachProForm";
@@ -24,32 +25,47 @@ const Products = (productType) => {
   }, [productType]);
   return (
     <>
-     <Header CartItem={products}/>
+      <Header CartItem={products} />
       <Navbar />
-          {products.map((product, index) => (
-      <>
-      {/* <Navbar2 product={product} /> */}
-      <div className="container">
-        <h2 className="text-center"></h2>
-        <hr />
-        <div className="rows">
-            <>
-              <h1 className="text-center rounded ">
-                {product.product_name}
-              </h1>
-              <p className="badge rounded text-bg-danger rounded " onClick={()=>window.location.href=`/mainType/${product.product_type}`}>
-                {product.product_type}
-              </p>
-              <div className="row ">
-                <div className="col"><Product product={product} key={product.id} /></div>
-                <div className="col"><Button product={product} key={product.id} /></div>
-                <div className="col"><Form product={product} key={product.id} /></div>
-              </div>
-            </>
-        </div>
-      </div>
-      </>
-          ))}
+      {products.map((product, index) => (
+        <>
+          {/* <Navbar2 product={product} /> */}
+          <div className="container">
+            <h2 className="text-center"></h2>
+            <hr />
+            <div className="rows">
+              <>
+                <h1 className="text-center rounded ">
+                  {product.product_name}
+                </h1>
+                <p className="badge rounded text-bg-danger rounded " onClick={() => window.location.href = `/mainType/${product.product_type}`}>
+                  {product.product_type}
+                </p>
+                <div className="row ">
+                  <div className="col"><Product product={product} key={product.id} /></div>
+                  <div className="col"><Button product={product} key={product.id} /></div>
+                  <div className="col"><Form product={product} key={product.id} /></div>
+                </div>
+              </>
+            </div>
+            {/* เพิ่มตรงส่วนของคะแนนสินค้า */}
+            <div>
+              <hr />
+              <h3>คะแนนสินค้า</h3>
+            </div>
+            <div>
+              <form>
+                <label>
+                  ความคิดเห็นของคุณ
+                  <input type="text" text="text" />
+                </label>
+                <input type="submit" value="ส่งความคิดเห็น" />
+              </form>
+            </div>
+
+          </div>
+        </>
+      ))}
     </>
   );
 };
