@@ -4,7 +4,7 @@ const connection = require("../database");
 
 app.use(express.json());
 app.use(express.urlencoded());
-//ท็อป
+
 const GetpFont = async (req, res) => {
   try {
     const conn = await connection;
@@ -16,7 +16,7 @@ const GetpFont = async (req, res) => {
   }
 };
 
-///จีน
+
 const Getproducts = async (req, res) => {
   try {
     const conn = await connection;
@@ -28,7 +28,7 @@ const Getproducts = async (req, res) => {
   }
 };
 
-//ท็อป
+
   const GetproductsByid = async (req,res) =>{
     try {
       const conn = await connection;

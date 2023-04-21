@@ -3,7 +3,8 @@
   import Shop from "../shops/Shop"
   import Header from "../header/Header"
   import axios from "axios"
-  import ChatInterface from '../TestLiveChat/ChatInterface';
+  import { FaComments } from 'react-icons/fa';
+  import ChatInterface from '../Phonlawat/ChatInterface';
 
 
   const Pages = () => {
@@ -31,8 +32,11 @@
  <Header CartItem={products}/>
         <Home  />
         <Shop products={products}  />
-      <button onClick={handleButtonClick}>Chat with us</button>
-    {isOpen && <ChatInterface onMessageSent={handleMessageSent} />}
+        {/* //อ๋อง */}
+        <div onClick={handleButtonClick} style={{ position: 'fixed', bottom: '30px', right: '30px', cursor: 'pointer' }}>
+        <FaComments size={30} color="#32CD32" />
+      </div>
+      {isOpen && <ChatInterface onMessageSent={handleMessageSent} />}
       </>
     )
   }

@@ -1,4 +1,4 @@
-//ท็อป
+
 const express = require('express');
 const {register,login} = require('.././api/registerAPI');
 const routes = express.Router();

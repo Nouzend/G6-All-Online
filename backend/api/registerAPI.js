@@ -25,7 +25,7 @@ app.use(
     store: sessionStore,
   })
 );
-//ท็อป
+
 const register = async (req, res) => {
   const salt = await bcrypt.genSalt(12);
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
@@ -57,7 +57,7 @@ const register = async (req, res) => {
     console.log(err);
   }
 }
-//อาร์ม
+
 const login =  async (req, res) => {
   const name = req.body.username;
   const password = req.body.password;

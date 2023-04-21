@@ -1,3 +1,5 @@
+/* อ๋อง */
+
 .ChatInterface {
     width: 100vw;
     height: 100vh;
@@ -189,4 +191,15 @@
   .hide {
     opacity: 0 !important;
   }
-  
+  .chat-window {
+    position: fixed;
+    bottom: 0;
+    right: 70px;
+    width: 300px;
+    height: 419px;
+  }
+  /* .chat-body {
+    height: 300px;
+    overflow-y: scroll;
+  }
+     */

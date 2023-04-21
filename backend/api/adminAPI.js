@@ -13,7 +13,6 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//show production (pass) ท็อปทำ
 const Getproducts = async (req, res) => {
   try {
     const conn = await connection;
@@ -25,8 +24,6 @@ const Getproducts = async (req, res) => {
   }
 };
 
-
-// Get a single product by ID (pass) ท็อปทำ
 const GetproductsByid = async (req,res) =>{
   try {
     const conn = await connection;
@@ -45,7 +42,6 @@ const GetproductsByid = async (req,res) =>{
 }
 
 
-// update product by id (pass) ท็อปทำ
 const UpdateProduct = async (req, res)  => { 
   const productId = req.params.id;
 
@@ -78,7 +74,6 @@ const UpdateProduct = async (req, res)  => {
 };
 
 
-// Create a new product(pass) ท็อปทำ
 const CreateProduct = async (req, res) => {
   try {
     const product = req.body;
@@ -92,7 +87,6 @@ const CreateProduct = async (req, res) => {
 }
 
 
-//delete product(pass) ท็อปทำ
 const Deleteproduct = async (req,res) => {
   try {
     const conn = await connection;
@@ -109,7 +103,7 @@ const Deleteproduct = async (req,res) => {
   }
 }
 
-//loginAdmin (pass) ท็อปทำ
+
 const loginAdmin =  async (req, res) => {
   const name = req.body.username;
   const password = req.body.password;
@@ -139,7 +133,7 @@ const loginAdmin =  async (req, res) => {
     console.log(err);
   }
 };
-//getuser pass ท็อปทำ
+
 const Getuser = async (req, res) => {
   try{
     const conn = await connection;
@@ -149,7 +143,7 @@ const Getuser = async (req, res) => {
     console.log(err)
   }
 }
-//getuser byid pass ท็อปทำ
+
 const GetuserByid = async (req,res) =>{
   try {
     const conn = await connection;
@@ -167,7 +161,7 @@ const GetuserByid = async (req,res) =>{
   }
 }
 
-//createuser pass ท็อปทำ
+
 const CreateUser = async (req, res) => {
   try {
     const conn = await connection;
@@ -189,7 +183,7 @@ const CreateUser = async (req, res) => {
 }
 
 
-//update user pass ท็อปทำ
+
 const UpdateUser = async (req, res) => {
   try {
     const salt = await bcrypt.genSalt(12);
@@ -214,7 +208,7 @@ const UpdateUser = async (req, res) => {
   }
 }
 
-//update user pass ท็อปทำ
+
 const DeleteUser = async (req, res) => {
   try {
     const conn = await connection;
