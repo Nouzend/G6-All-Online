@@ -3,6 +3,7 @@ import addToCshop from "../../function/addToshop";
 import eachprofrom from "./eachProForm";
 import { handleAddToCart } from "../handleCart/handleCart";
 import Example from "../handleCart/handleCart";
+import"../eachPro/sup-com/eachProButton.css"; //นางสาวศรุตยา  มากวิทย์ (นิว)
 
 export const Product = ({
   product,
