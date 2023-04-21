@@ -7,7 +7,7 @@
   import ChatInterface from '../Phonlawat/ChatInterface';
 
 
-  const Pages = () => {
+  const Pages = ({t,i18n}) => {
     const [products, setProducts] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
   
@@ -29,9 +29,9 @@
 
     return (
       <>
- <Header CartItem={products}/>
-        <Home  />
-        <Shop products={products}  />
+ <Header CartItem={products} t={t} i18n={i18n}/>
+        <Home t={t} i18n={i18n} />
+        <Shop products={products} t={t}  />
         {/* //อ๋อง */}
         <div onClick={handleButtonClick} style={{ position: 'fixed', bottom: '30px', right: '30px', cursor: 'pointer' }}>
         <FaComments size={30} color="#32CD32" />
