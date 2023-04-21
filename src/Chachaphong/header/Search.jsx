@@ -52,7 +52,7 @@ const Search = ({ onSearch,CartItem,t,i18n }) => {
 
   return (
     <>
-    
+    {/* จ๋า */}
       <section className="search">
         <div className="container c_flex">
           <div className="logo width ">
