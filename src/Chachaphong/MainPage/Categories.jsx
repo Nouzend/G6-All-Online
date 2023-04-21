@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Categories = () => {
+
+const Categories = ({t,i18n}) => {
   const data = [
     {
       cateImg: "./images/category/cat1.png",
@@ -70,7 +71,7 @@ const Categories = () => {
           return (
             <div className='box f_flex' key={index} onClick={() => handleBoxClick(value.catepath)}>
               <img src={value.cateImg} alt='' />
-              <span>{value.cateName}</span>
+              <span>{t(value.cateName)}</span>
               
             </div>
           )

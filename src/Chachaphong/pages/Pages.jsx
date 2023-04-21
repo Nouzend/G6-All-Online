@@ -1,16 +1,17 @@
-  import React,{ useEffect, useState }  from "react"
+  import React,{ useEffect, useState,Suspense }  from "react"
   import Home from "../MainPage/Home"
   import Shop from "../shops/Shop"
   import Header from "../header/Header"
   import axios from "axios"
-  import { FaComments } from 'react-icons/fa';
-  import ChatInterface from '../Phonlawat/ChatInterface';
+  import ChatInterface from '../TestLiveChat/ChatInterface';
 
 
-  const Pages = () => {
+
+  const Pages = ({t,i18n}) => {
     const [products, setProducts] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
-  
+
+    
     useEffect(() => {
       axios
         .get(`http://localhost:3002/user!/products`)
@@ -29,16 +30,14 @@
 
     return (
       <>
- <Header CartItem={products}/>
-        <Home  />
-        <Shop products={products}  />
+        <Header CartItem={products} t={t} i18n={i18n} />
+        <Home t={t} i18n={i18n} />
         {/* //อ๋อง */}
-        <div onClick={handleButtonClick} style={{ position: 'fixed', bottom: '30px', right: '30px', cursor: 'pointer' }}>
-        <FaComments size={30} color="#32CD32" />
-      </div>
-      {isOpen && <ChatInterface onMessageSent={handleMessageSent} />}
+        <Shop products={products} t={t} />
+        <button onClick={handleButtonClick}>Chat with us</button>
+        {isOpen && <ChatInterface onMessageSent={handleMessageSent} />}
       </>
-    )
+    );
   }
 
   export default Pages

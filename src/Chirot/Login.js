@@ -17,7 +17,7 @@ import Container from '@mui/material/Container';
 
 
 
-const Login = () => {
+const Login = ({t,i18n}) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 

@@ -4,7 +4,7 @@ import Head from "./Head"
 import Search from "./Search"
 import Navbar from "./Navbar"
 
-const Header = ({ CartItem }) => {
+const Header = ({ CartItem,t,i18n }) => {
   const [results, setResults] = useState([]);
 
     const handleSearch = (query) => {
@@ -21,7 +21,7 @@ const Header = ({ CartItem }) => {
   return (
     <>
       {/* <Head /> */}
-      <Search CartItem={CartItem} onSearch={handleSearch} />
+      <Search CartItem={CartItem} onSearch={handleSearch} t={t} i18n={i18n} />
       {/* <Navbar /> */}
     </>
   )

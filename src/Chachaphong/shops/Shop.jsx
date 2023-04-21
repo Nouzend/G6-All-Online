@@ -4,7 +4,7 @@ import ShopCart from "./ShopCart"
 import "./style.css"
 import addToCart from "../../Metha/function/addFunc"
 
-const Shop = ({ addToCart, shopItems }) => {
+const Shop = ({ t,addToCart, shopItems }) => {
   return (
     <>
       <section className='shop background'>
@@ -14,13 +14,14 @@ const Shop = ({ addToCart, shopItems }) => {
           <div className='contentWidth'>
             <div className='heading d_flex'>
               <div className='heading-left row  f_flex'>
-                <h2>สินค้า</h2>
+
+                <h2>{t('สินค้า')}</h2>
                 {/* <ul>
                   <li><a href="">/</a></li>
                 </ul> */}
               </div>
               <div className='heading-right row '>
-                <a href="/Allpro">ดูทั้งหมด</a>
+                <a href="/Allpro">{t("ดูทั้งหมด")}</a>
                 <i className='fa-solid fa-caret-right'></i>
               </div>
             </div>
