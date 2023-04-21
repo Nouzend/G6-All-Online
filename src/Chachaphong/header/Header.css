@@ -18,7 +18,7 @@
   width: 20%;
 }
 .search-box {
-  width: 80%;
+  width: 55%;
   border: 2px solid rgba(0, 0, 0, 0.1);
   /*padding: 10px;*/
   border-radius: 50px;
@@ -99,7 +99,7 @@ header ul li a {
   font-weight: 400;
 }
 header ul li a:hover {
-  color: #009f3c;
+  color: #05cc51;
 }
 
 .open {
