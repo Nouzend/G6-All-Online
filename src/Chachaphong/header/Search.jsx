@@ -14,11 +14,13 @@ const Search = ({ onSearch,CartItem }) => {
   // fixed Header
   window.addEventListener("scroll", function () {
     const search = document.querySelector(".search")
-    search.classList.toggle("active", window.scrollY > 100)
+    // search.classList.toggle("active", window.scrollY > 100)
   })
 
+  
   return (
     <>
+    
       <section className='search'>
         <div className='container c_flex'>
           <div className='logo width '>
@@ -35,10 +37,11 @@ const Search = ({ onSearch,CartItem }) => {
        
           </div>
 
-          <div className='icon f_flex width'>
-          <a href='/register'>สมัครสมาชิก</a>
-          <FiUser />
-          <a href='/login'> เข้าสู่ระบบ</a>
+          <div className=''>
+          <a href='/register'>Sing up / </a>
+          {/* <FiUser /> */}
+
+          <a href='/login'>Login</a>
             <div className='cart'>
               <Link to="">
               <Example CartItem={CartItem}/>
