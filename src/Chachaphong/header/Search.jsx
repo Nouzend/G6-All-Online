@@ -20,7 +20,7 @@ const Search = ({ onSearch,CartItem }) => {
   
   return (
     <>
-    
+    //จ๋า
       <section className='search'>
         <div className='container c_flex'>
           <div className='logo width '>
