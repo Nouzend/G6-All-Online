@@ -246,3 +246,11 @@ button {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
 }
+/* นางสางศรุตยา  มากวิทย์ (นิว) */
+.hr {
+  height:5px;
+  color: #009f3c;
+  background: #009f3c;
+  font-size: 0;
+  border: 0;
+}
