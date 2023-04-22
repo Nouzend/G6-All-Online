@@ -1,6 +1,6 @@
 
 const express = require('express');
-const {GetpFont,GetproductsByid} = require('.././api/fontAPI');
+const {GetpFont,GetproductsByid} = require('.././api/FontAPI');
 const routes = express.Router();
 
 routes.get('/Pd/:productType',GetpFont);

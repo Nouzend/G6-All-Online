@@ -52,6 +52,7 @@ const Navbar = () => {
           ALLOnline
           </Link>
         </li>
+        </ul>
       </div>
     </nav>
   );
