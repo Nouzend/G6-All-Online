@@ -32,7 +32,7 @@ function App() {
   const { shopItems } = Sdata
 
   const [CartItem, setCartItem] = useState([])
-    const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const addToCart = (product) => {
     const productExit = CartItem.find((item) => item.id === product.id)
     if (productExit) {
