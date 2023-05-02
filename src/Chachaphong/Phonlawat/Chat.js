@@ -19,6 +19,7 @@ function Chat({socket, username, room}) {
             }
             await socket.emit("send_message", messageData)
             setMessageList((list) => [...list, messageData]);
+            setCurrentMessage(""); // Clear input field
         }
     }
 
@@ -32,7 +33,7 @@ function Chat({socket, username, room}) {
     return (
         <div className="chat-window">
             <div className="chat-header">
-                <p>Live Chat</p>
+                <p>All Support</p>
             </div>
             <div className="chat-body">
                 <ScrollToBottom className="message-container">
@@ -55,7 +56,7 @@ function Chat({socket, username, room}) {
                 <input 
                 type="text" 
                 value={currentMessage}
-                placeholder="Hey..."
+                placeholder="พิมพ์ข้อความ..."
                 onChange={(event) => {
                     setCurrentMessage(event.target.value);
                 }}
