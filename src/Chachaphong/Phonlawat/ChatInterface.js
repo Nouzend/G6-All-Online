@@ -20,7 +20,7 @@ function ChatInterface() {
 
     return (
     <div className="ChatInterface">
-        {/* {showChat ? ( */}
+        {showChat ? (
         <div className="joinChatContainer">
         <h3>Join Chat</h3>
         <input 
@@ -39,9 +39,9 @@ function ChatInterface() {
         />
         <button onClick={joinRoom}>Join Room</button>
         </div>
-        {/* ) : ( */}
+        ) : (
         <Chat socket={socket} username={username} room={room}/>
-        {/* )} */}
+        )}
     </div>
     );
 }
