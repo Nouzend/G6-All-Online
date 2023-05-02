@@ -57,16 +57,13 @@ function App() {
       <Suspense fallback="loading">
         <Head />
         <Router>
-          {/* <Header CartItem={CartItem} /> */}
+          <Header CartItem={CartItem} t={t} i18n={i18n} />
           <Switch>
             <Route path="/Allpro" exact>
               <AllProduct />
             </Route>
             <Route path="/login">
-              <Login
-              t={t} 
-              i18n={i18n}
-              />
+              <Login t={t} i18n={i18n} />
             </Route>
             <Route path="/" exact>
               <Pages
