@@ -57,13 +57,16 @@ function App() {
       <Suspense fallback="loading">
         <Head />
         <Router>
-          <Header CartItem={CartItem} t={t} i18n={i18n} />
+          {/* <Header CartItem={CartItem} /> */}
           <Switch>
             <Route path="/Allpro" exact>
               <AllProduct />
             </Route>
             <Route path="/login">
-              <Login t={t} i18n={i18n} />
+              <Login
+              t={t} 
+              i18n={i18n}
+              />
             </Route>
             <Route path="/" exact>
               <Pages
@@ -81,37 +84,37 @@ function App() {
               <Users />
             </Route>
             <Route path="/mainType/IT_and_computer">
-              <MainTypeproduct productType="IT_and_computer" />
+              <MainTypeproduct t={t} i18n={i18n} productType="IT_and_computer" />
             </Route>
             <Route path="/mainType/pet">
-              <MainTypeproduct productType="pet" />
+              <MainTypeproduct t={t} i18n={i18n} productType="pet" />
             </Route>
             <Route path="/mainType/beauty">
-              <MainTypeproduct productType="beauty" />
+              <MainTypeproduct t={t} i18n={i18n} productType="beauty" />
             </Route>
             <Route path="/mainType/electronic">
-              <MainTypeproduct productType="electronic" />
+              <MainTypeproduct t={t} i18n={i18n} productType="electronic" />
             </Route>
             <Route path="/mainType/mom_and_kids">
-              <MainTypeproduct productType="mom_and_kids" />
+              <MainTypeproduct t={t} i18n={i18n} productType="mom_and_kids" />
             </Route>
             <Route path="/mainType/HnG">
-              <MainTypeproduct productType="HnG" />
+              <MainTypeproduct t={t} i18n={i18n} productType="HnG" />
             </Route>
             <Route path="/mainType/fashionW">
-              <MainTypeproduct productType="fashionW" />
+              <MainTypeproduct t={t} i18n={i18n} productType="fashionW" />
             </Route>
             <Route path="/mainType/fashionM">
-              <MainTypeproduct productType="fashionM" />
+              <MainTypeproduct t={t} i18n={i18n} productType="fashionM" />
             </Route>
             <Route path="/mainType/book_and_office">
-              <MainTypeproduct productType="book_and_office" />
+              <MainTypeproduct t={t} i18n={i18n} productType="book_and_office" />
             </Route>
             <Route path="/mainType/SME_product">
-              <MainTypeproduct productType="SME_product" />
+              <MainTypeproduct t={t} i18n={i18n} productType="SME_product" />
             </Route>
             <Route path="/mainType/healthy">
-              <MainTypeproduct productType="healthy" />
+              <MainTypeproduct t={t} i18n={i18n} productType="healthy" />
             </Route>
             <Route path="/login!">
               <LoginAdmin />
@@ -136,6 +139,8 @@ function App() {
                 CartItem={CartItem}
                 addToCart={addToCart}
                 decreaseQty={decreaseQty}
+                t={t}
+                i18n={i18n}
               />
             </Route>
             <Route path="/cart" exact>
