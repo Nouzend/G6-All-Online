@@ -8,7 +8,7 @@ import TablePro from "./sup-compo/fashion/tablePro";
 import Footer from "./sup-compo/navbar/Footer";
 import Header from ".././Chachaphong/header/Header"
 import "./CSS/App.css";
-function Fashion( productType,{t,i18n} ) {
+function Fashion( productType) {
   console.log(productType.productType);
   const [products, setProducts] = useState([]);
   const [api, setApi] = useState("");
@@ -64,7 +64,7 @@ function Fashion( productType,{t,i18n} ) {
 
   return (
     <div>
-       <Header CartItem={products} t={t} i18n={i18n}/>
+       <Header CartItem={products} t={productType.t} i18n={productType.i18n}/>
       <Navbar />
       <div className="container">
         <h2>{productType.productType} Products</h2>

@@ -11,8 +11,8 @@ import Navbar2 from "./sup-compo/navbar/navbarTest";
 import "./CSS/App.css";
 import Header from "../Chachaphong/header/Header.jsx"
 
+const Products = (productType) => {
 
-const Products = (productType,t,i18n) => {
   const params = useParams();
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -25,7 +25,7 @@ const Products = (productType,t,i18n) => {
   }, [productType]);
   return (
     <>
-      <Header CartItem={products} t={t} i18n={i18n} />
+      <Header CartItem={products} t={productType.t} i18n={productType.i18n} />
       <Navbar />
       {products.map((product, index) => (
         <>
