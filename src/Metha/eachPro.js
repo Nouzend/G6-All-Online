@@ -12,7 +12,7 @@ import "./CSS/App.css";
 import Header from "../Chachaphong/header/Header.jsx"
 
 
-const Products = (productType,{t,i18n}) => {
+const Products = (productType,t,i18n) => {
   const params = useParams();
   const [products, setProducts] = useState([]);
   useEffect(() => {
