@@ -2,7 +2,7 @@ const mysql = require('mysql2/promise');
 //ท็อป
 const dbConfig = {
   host: 'ap-southeast.connect.psdb.cloud',
-  user: 'drkbhmjbe11da0sd5i3o',
+  user:'drkbhmjbe11da0sd5i3o',
   password: 'pscale_pw_7uYjws4cDq2jkEsCO1ZATvWaYDOPTPogUgdfDLwwapM',
   database: 'featuresall',
   ssl: { rejectUnauthorized: false },
