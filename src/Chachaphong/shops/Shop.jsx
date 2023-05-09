@@ -4,7 +4,7 @@ import ShopCart from "./ShopCart"
 import "./style.css"
 import addToCart from "../../Metha/function/addFunc"
 
-const Shop = ({ t,addToCart, shopItems }) => {
+const   Shop = ({ t,addToCart, shopItems }) => {
   return (
     <>
       <section className='shop background'>
