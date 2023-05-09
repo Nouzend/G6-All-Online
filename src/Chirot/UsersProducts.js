@@ -19,7 +19,7 @@ import Navbar from "../Metha/sup-compo/navbar/navbarMain";
 import { Link } from "react-router-dom";
 
 
-function createData(name, calories, fat, carbs, protein) {
+function createData(name, calories, fat, carbs, protein,) {
   return { name, calories, fat, carbs, protein };
 }
 
@@ -33,7 +33,7 @@ const rows = [
   createData("Gingerbread", 356, 16.0, 49, 3.9),
 ];
 
-export default function SimpleContainer() {
+export default function SimpleContainer({t,i18n}) {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -72,92 +72,106 @@ export default function SimpleContainer() {
 
   return (
     <>
-   <Navbar/>
-    <button primary onClick={() => window.location.href="/" }>backhomepage</button>
-    <React.Fragment>
-      <CssBaseline />
-      <Container maxWidth="" sx={{ p: -5 }}>
-        <Paper sx={{ p: 1 }}>
-          <Box display={"flex"}>
-            <Box sx={{ flexGrow: 1 }}>
-              <Typography variant="h6" gutterBottom>
-                Prodoucts
-              </Typography>
+      <Navbar t={t} i18n={i18n} />
+      <button primary onClick={() => (window.location.href = "/")}>
+        backhomepage
+      </button>
+      <React.Fragment>
+        <CssBaseline />
+        <Container maxWidth="" sx={{ p: -5 }}>
+          <Paper sx={{ p: 1 }}>
+            <Box display={"flex"}>
+              <Box sx={{ flexGrow: 1 }}>
+                <Typography variant="h6" gutterBottom>
+                  Prodoucts
+                </Typography>
+              </Box>
+              <Box>
+                <Fab
+                  variant="extended"
+                  onClick={() => (window.location.href = "/admin")}
+                >
+                  จัดการผู้ใช้
+                </Fab>
+                <Fab
+                  color="secondary"
+                  aria-label="add"
+                  onClick={() => (window.location.href = `/productsC`)}
+                >
+                  สร้าง
+                </Fab>
+              </Box>
             </Box>
-            <Box>
-              <Fab variant="extended"onClick={() => (window.location.href = "/admin")}>
-            จัดการผู้ใช้
-              </Fab>
-              <Fab
-                color="secondary"
-                aria-label="add"
-                onClick={() => (window.location.href = `/productsC`)}
-              >
-                สร้าง
-              </Fab>
-            </Box>
-          </Box>
-          <TableContainer component={Paper} className="">
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
-              <TableHead>
-                <TableRow>
-                  <TableCell>ID</TableCell>
-                  <TableCell align="center">Picture</TableCell>
-                  <TableCell align="center">Name</TableCell>
-                  <TableCell align="center">Price</TableCell>
-                  <TableCell align="center">Type</TableCell>
-                  <TableCell align="center">Promotion</TableCell>
-                  <TableCell align="center">Detail</TableCell>
-                  <TableCell align="center">Caution</TableCell>
-                  <TableCell align="center">Warring</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {items.map((row) => (
-                  <TableRow
-                    key={row.id}
-                    sx={{ "&:last-child td, &:last-child th": { border: 100 } }}
-                  >
-                    <TableCell component="th" scope="row">
-                      {row.id}
-                    </TableCell>
-                    <TableCell align="center">
-                      <Avatar alt={row.usernsme} src={row.image_product} />
-                    </TableCell>
-                    <TableCell align="center">{row.product_name}</TableCell>
-                    <TableCell align="center">{row.product_price}</TableCell>
-                    <TableCell align="center">{row.product_type}</TableCell>
-                    <TableCell align="center">
-                      {row.product_promotion}
-                    </TableCell>
-                    <TableCell align="center">{row.product_detail}</TableCell>
-                    <TableCell align="center">{row.product_caution}</TableCell>
-                    <TableCell align="center">{row.product_warring}</TableCell>
-                    <TableCell align="center"></TableCell>
-                    <Box>
-                      <IconButton href="#" onClick={() => ProductsDelete(row)}>
-                        <DeleteIcon fontSize="inherit" />
-                      </IconButton>
-                      <Link>
-                        <Fab
-                          color="secondary"
-                          aria-label="add"
-                          onClick={() =>
-                            (window.location.href = `/productsU/${row.id}`)
-                          }
-                        >
-                          แก้ไข
-                        </Fab>
-                      </Link>
-                    </Box>
+            <TableContainer component={Paper} className="">
+              <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell>ID</TableCell>
+                    <TableCell align="center">Picture</TableCell>
+                    <TableCell align="center">Name</TableCell>
+                    <TableCell align="center">Price</TableCell>
+                    <TableCell align="center">Type</TableCell>
+                    <TableCell align="center">Promotion</TableCell>
+                    <TableCell align="center">Detail</TableCell>
+                    <TableCell align="center">Caution</TableCell>
+                    <TableCell align="center">Warring</TableCell>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </Paper>
-      </Container>
-    </React.Fragment>
+                </TableHead>
+                <TableBody>
+                  {items.map((row) => (
+                    <TableRow
+                      key={row.id}
+                      sx={{
+                        "&:last-child td, &:last-child th": { border: 100 },
+                      }}
+                    >
+                      <TableCell component="th" scope="row">
+                        {row.id}
+                      </TableCell>
+                      <TableCell align="center">
+                        <Avatar alt={row.usernsme} src={row.image_product} />
+                      </TableCell>
+                      <TableCell align="center">{row.product_name}</TableCell>
+                      <TableCell align="center">{row.product_price}</TableCell>
+                      <TableCell align="center">{row.product_type}</TableCell>
+                      <TableCell align="center">
+                        {row.product_promotion}
+                      </TableCell>
+                      <TableCell align="center">{row.product_detail}</TableCell>
+                      <TableCell align="center">
+                        {row.product_caution}
+                      </TableCell>
+                      <TableCell align="center">
+                        {row.product_warring}
+                      </TableCell>
+                      <TableCell align="center"></TableCell>
+                      <Box>
+                        <IconButton
+                          href="#"
+                          onClick={() => ProductsDelete(row)}
+                        >
+                          <DeleteIcon fontSize="inherit" />
+                        </IconButton>
+                        <Link>
+                          <Fab
+                            color="secondary"
+                            aria-label="add"
+                            onClick={() =>
+                              (window.location.href = `/productsU/${row.id}`)
+                            }
+                          >
+                            แก้ไข
+                          </Fab>
+                        </Link>
+                      </Box>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Paper>
+        </Container>
+      </React.Fragment>
     </>
   );
 }

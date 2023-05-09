@@ -65,7 +65,7 @@ function Fashion( productType) {
   return (
     <div>
        <Header CartItem={products} t={productType.t} i18n={productType.i18n}/>
-      <Navbar />
+      <Navbar t={productType.t} i18n={productType.i18n} />
       <div className="container">
         <h2>{productType.productType} Products</h2>
         <hr />

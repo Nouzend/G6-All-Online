@@ -4,7 +4,7 @@ import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import Swal from "sweetalert2";
 import Navbar from "./sup-compo/navbar/navbarMain";
 
-const AdminLogin = () => {
+const AdminLogin = ({t,i18n}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -54,7 +54,7 @@ const AdminLogin = () => {
 
   return (
     <>
-    <Navbar/>
+    <Navbar t={t} i18n={i18n}/>
     <button primary onClick={() => window.location.href="/" }>back</button>
   <Container className="mt-5">
     <Row>

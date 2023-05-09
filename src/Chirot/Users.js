@@ -22,7 +22,7 @@ import Navbar from '../Metha/sup-compo/navbar/navbarMain';
 
 
 //////Chirot 
-export default function SimpleContainer() {
+export default function SimpleContainer({t,i18n}) {
     const [items, setItems] = useState([]);
 // console.log(items)
 
@@ -69,7 +69,7 @@ export default function SimpleContainer() {
 
     return (
         <>
-        <Navbar/>
+        <Navbar t={t} i18n={i18n}/>
     <button primary onClick={() => window.location.href="/" }>backhomepage</button>
         <React.Fragment>
             <CssBaseline />

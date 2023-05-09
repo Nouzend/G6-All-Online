@@ -23,66 +23,67 @@ const handleClick = () => {
 
   return (
     <>
-        <Navbar/>
-        {/* <Navbar2/> */}
-    <Container>
-      <Row>
-        <Col md={{ span: 6, offset: 3 }}>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formPaymentMethod">
-              <Form.Label>Payment Method</Form.Label>
-              <Form.Control
-                as="select"
-                value={paymentMethod}
-                onChange={(e) => setPaymentMethod(e.target.value)}
-              >
-                <option value="">Select payment method</option>
-                <option value="creditCard">Credit Card</option>
-                <option value="debitCard">Debit Card</option>
-                <option value="netBanking">Net Banking</option>
-              </Form.Control>
-            </Form.Group>
-            {paymentMethod === "creditCard" || paymentMethod === "debitCard" ? (
-              <>
-                <Form.Group controlId="formCardNumber">
-                  <Form.Label>Card Number</Form.Label>
-                  <Form.Control
-                    type="text"
-                    value={cardNumber}
-                    onChange={(e) => setCardNumber(e.target.value)}
-                  />
-                </Form.Group>
-                <Form.Group controlId="formNameOnCard">
-                  <Form.Label>Name on Card</Form.Label>
-                  <Form.Control
-                    type="text"
-                    value={nameOnCard}
-                    onChange={(e) => setNameOnCard(e.target.value)}
-                  />
-                </Form.Group>
-                <Form.Group controlId="formExpiryDate">
-                  <Form.Label>Expiry Date</Form.Label>
-                  <Form.Control
-                    type="text"
-                    value={expiryDate}
-                    onChange={(e) => setExpiryDate(e.target.value)}
-                  />
-                </Form.Group>
-                <Form.Group controlId="formCvv">
-                  <Form.Label>CVV</Form.Label>
-                  <Form.Control
-                    type="text"
-                    value={cvv}
-                    onChange={(e) => setCvv(e.target.value)}
-                  />
-                </Form.Group>
-              </>
-            ) : null}
-            <Button type="submit">Make Payment</Button>
-          </Form>
-        </Col>
-      </Row>
-    </Container>
+      <Navbar t={product.t} i18n={product.i18n} />
+      {/* <Navbar2/> */}
+      <Container>
+        <Row>
+          <Col md={{ span: 6, offset: 3 }}>
+            <Form onSubmit={handleSubmit}>
+              <Form.Group controlId="formPaymentMethod">
+                <Form.Label>Payment Method</Form.Label>
+                <Form.Control
+                  as="select"
+                  value={paymentMethod}
+                  onChange={(e) => setPaymentMethod(e.target.value)}
+                >
+                  <option value="">Select payment method</option>
+                  <option value="creditCard">Credit Card</option>
+                  <option value="debitCard">Debit Card</option>
+                  <option value="netBanking">Net Banking</option>
+                </Form.Control>
+              </Form.Group>
+              {paymentMethod === "creditCard" ||
+              paymentMethod === "debitCard" ? (
+                <>
+                  <Form.Group controlId="formCardNumber">
+                    <Form.Label>Card Number</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={cardNumber}
+                      onChange={(e) => setCardNumber(e.target.value)}
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="formNameOnCard">
+                    <Form.Label>Name on Card</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={nameOnCard}
+                      onChange={(e) => setNameOnCard(e.target.value)}
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="formExpiryDate">
+                    <Form.Label>Expiry Date</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={expiryDate}
+                      onChange={(e) => setExpiryDate(e.target.value)}
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="formCvv">
+                    <Form.Label>CVV</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={cvv}
+                      onChange={(e) => setCvv(e.target.value)}
+                    />
+                  </Form.Group>
+                </>
+              ) : null}
+              <Button type="submit">Make Payment</Button>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 };

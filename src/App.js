@@ -63,10 +63,7 @@ function App() {
               <AllProduct />
             </Route>
             <Route path="/login">
-              <Login
-              t={t} 
-              i18n={i18n}
-              />
+              <Login t={t} i18n={i18n} />
             </Route>
             <Route path="/" exact>
               <Pages
@@ -84,7 +81,11 @@ function App() {
               <Users />
             </Route>
             <Route path="/mainType/IT_and_computer">
-              <MainTypeproduct t={t} i18n={i18n} productType="IT_and_computer" />
+              <MainTypeproduct
+                t={t}
+                i18n={i18n}
+                productType="IT_and_computer"
+              />
             </Route>
             <Route path="/mainType/pet">
               <MainTypeproduct t={t} i18n={i18n} productType="pet" />
@@ -108,7 +109,11 @@ function App() {
               <MainTypeproduct t={t} i18n={i18n} productType="fashionM" />
             </Route>
             <Route path="/mainType/book_and_office">
-              <MainTypeproduct t={t} i18n={i18n} productType="book_and_office" />
+              <MainTypeproduct
+                t={t}
+                i18n={i18n}
+                productType="book_and_office"
+              />
             </Route>
             <Route path="/mainType/SME_product">
               <MainTypeproduct t={t} i18n={i18n} productType="SME_product" />
@@ -117,7 +122,7 @@ function App() {
               <MainTypeproduct t={t} i18n={i18n} productType="healthy" />
             </Route>
             <Route path="/login!">
-              <LoginAdmin />
+              <LoginAdmin t={t} i18n={i18n} />
             </Route>
             <Route path="/Products">
               <UsersProducts />

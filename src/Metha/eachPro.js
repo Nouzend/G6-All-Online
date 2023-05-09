@@ -26,7 +26,7 @@ const Products = (productType) => {
   return (
     <>
       <Header CartItem={products} t={productType.t} i18n={productType.i18n} />
-      <Navbar />
+      <Navbar t={productType.t} i18n={productType.i18n} />
       {products.map((product, index) => (
         <>
           {/* <Navbar2 product={product} /> */}
@@ -35,16 +35,25 @@ const Products = (productType) => {
             <hr />
             <div className="rows">
               <>
-                <h1 className="text-center rounded ">
-                  {product.product_name}
-                </h1>
-                <p className="badge rounded text-bg-danger rounded " onClick={() => window.location.href = `/mainType/${product.product_type}`}>
+                <h1 className="text-center rounded ">{product.product_name}</h1>
+                <p
+                  className="badge rounded text-bg-danger rounded "
+                  onClick={() =>
+                    (window.location.href = `/mainType/${product.product_type}`)
+                  }
+                >
                   {product.product_type}
                 </p>
                 <div className="row ">
-                  <div className="col"><Product product={product} key={product.id} /></div>
-                  <div className="col"><Button product={product} key={product.id} /></div>
-                  <div className="col"><Form product={product} key={product.id} /></div>
+                  <div className="col">
+                    <Product product={product} key={product.id} />
+                  </div>
+                  <div className="col">
+                    <Button product={product} key={product.id} />
+                  </div>
+                  <div className="col">
+                    <Form product={product} key={product.id} />
+                  </div>
                 </div>
               </>
             </div>
@@ -62,7 +71,6 @@ const Products = (productType) => {
                 <input type="submit" value="ส่งความคิดเห็น" />
               </form>
             </div>
-
           </div>
         </>
       ))}
