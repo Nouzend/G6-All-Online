@@ -9,6 +9,7 @@
 /*------search-----------*/
 .search {
   padding: 20px 0;
+  
 }
 .search .logo img {
   width: auto;
@@ -20,8 +21,10 @@
 .search-box {
   width: 80%;
   border: 2px solid rgba(0, 0, 0, 0.1);
-  /*padding: 10px;*/
+  /* padding: 10px; */
   border-radius: 50px;
+  margin-left: 55px;
+  
 }
 .search-box i {
   width: 5%;
@@ -106,7 +109,7 @@ header ul li a:hover {
   display: none;
 }
 .search.active {
-  height: 19vh;
+  /* height: 12vh; */
   position: fixed;
   top: 0;
   z-index: 1000;

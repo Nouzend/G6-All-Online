@@ -48,7 +48,7 @@ const Search = ({ onSearch,CartItem,t,i18n }) => {
   // fixed Header
   window.addEventListener("scroll", function () {
     const search = document.querySelector(".search")
-    search.classList.toggle("active", window.scrollY > 100)
+    search.classList.toggle("active", window.scrollY > 120)
   })
   const [user, setUser] = useState(null);
 
