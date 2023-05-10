@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useState,useEffect} from "react"
 import { FiUser , FiShoppingCart } from "react-icons/fi";
 import { ImSearch } from "react-icons/im";
 import { Link } from "react-router-dom"
@@ -9,7 +9,7 @@ import i18next from "i18next";
 const languages = [
   {
     code: "th",
-    name: "Thailand",
+    name: "ไทย",
     country_code: "th",
   },
   {
@@ -19,7 +19,7 @@ const languages = [
   },
   {
     code: "ch",
-    name: "China",
+    name: "中国",
     country_code: "ch",
   },
 ];
@@ -50,6 +50,14 @@ const Search = ({ onSearch,CartItem,t,i18n }) => {
     const search = document.querySelector(".search")
     search.classList.toggle("active", window.scrollY > 100)
   })
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetch("/api/user")
+      .then((res) => res.json())
+      .then((data) => setUser(data.user))
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <>
@@ -117,7 +125,11 @@ const Search = ({ onSearch,CartItem,t,i18n }) => {
           <div className="icon f_flex width">
             <a href="/register">{t("สมัครสมาชิก")}</a>
             <FiUser />
-            <a href="/login">{t("เข้าสู่ระบบ")}</a>
+            {user ? (
+              <p>{user.name}</p>
+            ) : (
+              <a href="/login">{t("เข้าสู่ระบบ")}</a>
+            )}
             <div className="cart">
               <Link to="">
                 <Example CartItem={CartItem} />
