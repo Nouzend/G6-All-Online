@@ -9,7 +9,7 @@ import i18next from "i18next";
 const languages = [
   {
     code: "th",
-    name: "Thailand",
+    name: "ไทย",
     country_code: "th",
   },
   {
@@ -19,7 +19,7 @@ const languages = [
   },
   {
     code: "ch",
-    name: "China",
+    name: "中国",
     country_code: "ch",
   },
 ];
@@ -48,7 +48,7 @@ const Search = ({ onSearch,CartItem,t,i18n }) => {
   // fixed Header
   window.addEventListener("scroll", function () {
     const search = document.querySelector(".search")
-    search.classList.toggle("active", window.scrollY > 100)
+    search.classList.toggle("active", window.scrollY > 120)
   })
 
   return (
