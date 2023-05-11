@@ -18,8 +18,8 @@ const FilterPanel = ({
 }) => (
   <div>
     {}
+    <p className='label'>Brand</p>
     <div className='input-group'>
-      <p className='label'>Brand</p>
       {cuisines.map((cuisine) => (
         <CheckboxProton
           key={cuisine.id}
@@ -31,8 +31,6 @@ const FilterPanel = ({
     <div className='input-group'>
       <p className='label-range'>ราคาสินค้า</p>
       <SliderProton value={selectedPrice} changePrice={changePrice} />
-    </div>
-    <div className='input-group'>
     </div>
   </div>
 );
