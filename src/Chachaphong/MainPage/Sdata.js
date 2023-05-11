@@ -4,10 +4,6 @@ const Sdata = [
     cover: "./images/SlideCard/pro2.jpg",
   },
   {
-    id: 2,
-    cover: "./images/SlideCard/pro1.jpg",
-  },
-  {
     id: 3,
     cover: "./images/SlideCard/pro7.jpg",
   },

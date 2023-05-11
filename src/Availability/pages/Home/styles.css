@@ -1,7 +1,7 @@
 .home {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 115vh;
 }
 .home_panelList-wrap,
 .home_panel-wrap,
@@ -19,5 +19,5 @@
 }
 .home_list-wrap {
   flex: 1;
-  padding: 1rem;
+  padding: 4rem;
 }
