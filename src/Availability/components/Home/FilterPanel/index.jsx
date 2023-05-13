@@ -6,7 +6,7 @@ import FilterListToggle from '../../common/FilterListToggle';
 import SliderProton from '../../common/SliderProton';
 import './styles.css';
 
-const FilterPanel = ({
+const FilterPanel = ({i18n,t,
   selectedCategory,
   selectCategory,
   selectedRating,
@@ -18,7 +18,7 @@ const FilterPanel = ({
 }) => (
   <div>
     {}
-    <p className='label'>Brand</p>
+    <p className='label'>{t('Brand')}</p>
     <div className='input-group'>
       {cuisines.map((cuisine) => (
         <CheckboxProton
@@ -29,7 +29,7 @@ const FilterPanel = ({
       ))}
     </div>
     <div className='input-group'>
-      <p className='label-range'>ราคาสินค้า</p>
+      <p className='label-range'>{t('ราคาสินค้า')}</p>
       <SliderProton value={selectedPrice} changePrice={changePrice} />
     </div>
   </div>
