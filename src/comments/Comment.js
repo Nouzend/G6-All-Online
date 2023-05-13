@@ -1,3 +1,4 @@
+// สิริญาดา รัตนสิทธิ์ จ๋า
 import CommentForm from "./CommentForm";
 
 const Comment = ({
