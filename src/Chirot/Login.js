@@ -22,6 +22,8 @@ const socket = io.connect("http://localhost:3001");
 function Login({t,i18n}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+
+    //อ๋อง
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [loggedInUsername, setLoggedInUsername] = useState("");
     const history = useHistory();
@@ -157,6 +159,7 @@ function Login({t,i18n}) {
                                 </Grid>
                             </Grid>
                         </Box>
+                        {/* //อ๋อง */}
                         {isLoggedIn && <Chat socket={socket} username={loggedInUsername} room={room} />}
                     </Box>
                 </Col>

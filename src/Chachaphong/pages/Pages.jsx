@@ -9,6 +9,7 @@
   import { useLocation } from "react-router-dom";
   import io from 'socket.io-client'
 
+  //อ๋อง
   const socket = io.connect("http://localhost:3001");
 
   const Pages = ({t,i18n}) => {
