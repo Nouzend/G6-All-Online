@@ -1,3 +1,4 @@
+/* นางสาวศรุตยา  มากวิทย์ (นิว) */
 .comments {
   margin-top: 20px;
 }
@@ -16,8 +17,8 @@
 }
 
 .comment-form-textarea {
-  width: 90%;
-  height: 80px;
+  width: 50%;
+  height: 70px;
   margin-bottom: 8px;
   margin-top: 8px;
   border: 1px solid rgb(0, 0, 0);
@@ -26,14 +27,14 @@
 .comment-form-button {
   font-size: 16px;
   padding: 8px 16px;
-  background: rgb(17, 89, 197);
+  background: #379237;
   border-radius: 8px;
   color: white;
 }
 
 .comment-form-button:hover:enabled {
   cursor: pointer;
-  background: rgb(37, 99, 235);
+  background: #54B435;
 }
 
 .comment-form-button:disabled {
@@ -73,12 +74,12 @@
 }
 
 .comment-text {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .comment-actions {
   display: flex;
-  font-size: 12px;
+  font-size: 14px;
   color: rgb(51, 51, 51);
   cursor: pointer;
   margin-top: 8px;
