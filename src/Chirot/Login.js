@@ -26,7 +26,7 @@ function Login({t,i18n}) {
     //อ๋อง
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [loggedInUsername, setLoggedInUsername] = useState("");
-    const history = useHistory();
+    const history = useHistory();//ใช้กลับไปหน้า page
     const [room, setRoom] = useState("default-room");
 
     // useEffect(() => {
@@ -44,7 +44,7 @@ function Login({t,i18n}) {
         setIsLoggedIn(true);
         setLoggedInUsername(username);
         socket.emit("join_room", room); // join the room "1234"
-        history.push(`/?username=${username}&room=${room}`);
+        history.push(`/?username=${username}&room=${room}`);//ส่ง username และ room ไปในรูปของ path
     };
 
     const handleUsername = (e) => {
@@ -94,7 +94,7 @@ function Login({t,i18n}) {
     };
 
     if (isLoggedIn) {
-        return <Chat socket={socket} username={loggedInUsername} room={room} />;
+        return <Chat socket={socket} username={loggedInUsername} room={room} />;//ส่งไป chat.js
     }
 
     return (
