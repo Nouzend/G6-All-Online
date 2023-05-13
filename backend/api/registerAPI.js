@@ -1,9 +1,10 @@
-  const express = require("express");
+const express = require("express");
 const app = express();
 const connection = require("../database");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
+
 const session = require("express-session");
 const corsOptions = {
   origin: "http://localhost:3000",
@@ -41,7 +42,7 @@ const register = async (req, res) => {
       res.send({ message: "ชื่อผู้ใช้นี้มีอยู่แล้วกรุณากรอกข้อมูลใหม่" });
     } else {
       await conn.execute(
-        "INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)",
+        "INSERT INTO users (username, email, password, role) VALUES (:v1, :v2, :v3, :v4)",
         [name, email, hashedPassword, role]
       );
       const token = jwt.sign({ name, email, role }, "secret_key", {
@@ -58,29 +59,36 @@ const register = async (req, res) => {
   }
 }
 
-const login =  async (req, res) => {
+const login = async (req, res) => {
   const name = req.body.username;
   const password = req.body.password;
-  // console.log(name);
   try {
     const conn = await connection;
     const user = await conn.query("SELECT * FROM users WHERE username = ?", [name]);
     console.log(user[0][0].password);
-    if(user[0].length > 0) {
+    if (user[0].length > 0) {
       let match = await bcrypt.compare(password, user[0][0].password);
-      if(match === true) {
+      if (match === true) {
+        const token = jwt.sign({ name }, "secret_key", { expiresIn: "1h" });
+        if (req.session) { // check if session is defined
+          req.session.user = { name };
+        }
+        res.cookie("token", token, {
+          httpOnly: true,
+          expires: new Date(Date.now() + 3600000),
+        });
         res.status(200).send("OK");
-      }
-    else if (match === false) {
+      } else if (match === false) {
         res.status(401).send("รหัสไม่ถูก");
       }
     } else {
       res.status(401).send("ไม่พบชื่อผู้ใช้");
-    }    
+    }
   } catch (err) {
     console.log(err);
   }
 };
+
 
 
 module.exports = {

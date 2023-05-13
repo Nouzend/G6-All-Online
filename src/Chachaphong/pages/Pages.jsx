@@ -4,12 +4,32 @@
   import Header from "../header/Header"
   import axios from "axios"
   import { FaComments } from 'react-icons/fa';
-  import ChatInterface from '../Phonlawat/ChatInterface';
+  import Chat from '../Phonlawat/Chat';
   import Tipchumporn from "../../Availability/pages/Home"
+  import { useLocation } from "react-router-dom";
+  import io from 'socket.io-client'
+
+  const socket = io.connect("http://localhost:3001");
 
   const Pages = ({t,i18n}) => {
     const [products, setProducts] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation();
+  const query = new URLSearchParams(location.search);
+  const username = query.get("username");
+  const [room, setRoom] = useState("default-room");
+ 
+
+  useEffect(() => {
+    joinRoom();
+}, []);
+
+const joinRoom = () => {
+  if (username !== "" && room !== "") {
+      socket.emit("join_room", room);
+      setIsOpen(true);
+  }
+}
   
     useEffect(() => {
       axios
@@ -37,7 +57,7 @@
         <div onClick={handleButtonClick} style={{ position: 'fixed', bottom: '30px', right: '30px', cursor: 'pointer' }}>
         <FaComments size={30} color="#32CD32" />
       </div>
-      {isOpen && <ChatInterface onMessageSent={handleMessageSent} />}
+      {isOpen && <Chat socket={socket} username={username} room={room} />}
       </>
     )
   }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import axios from "axios";
 import { Row, Col } from "react-bootstrap";
 import Swal from "sweetalert2";
@@ -12,14 +12,38 @@ import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import Chat from '../Chachaphong/Phonlawat/Chat'
+import io from "socket.io-client";
+import { useHistory } from "react-router-dom";
+
+const socket = io.connect("http://localhost:3001");
 
 
-
-
-
-const Login = ({t,i18n}) => {
+function Login({t,i18n}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [loggedInUsername, setLoggedInUsername] = useState("");
+    const history = useHistory();
+    const [room, setRoom] = useState("default-room");
+
+    // useEffect(() => {
+    //     joinRoom();
+    // }, []);
+
+    // const joinRoom = () => {
+    //     if (username !== "" && room !== "") {
+    //         socket.emit("join_room", room);
+    //         // setShowChat(true);
+    //     }
+    // }
+
+    const handleLogin = (username) => {
+        setIsLoggedIn(true);
+        setLoggedInUsername(username);
+        socket.emit("join_room", room); // join the room "1234"
+        history.push(`/?username=${username}&room=${room}`);
+    };
 
     const handleUsername = (e) => {
         setUsername(e.target.value);
@@ -51,9 +75,11 @@ const Login = ({t,i18n}) => {
                     title: "login success",
                     text: "welcome to our website",
                 });
-                setTimeout(() => {
-                    window.location.href = "/";
-                }, 3000);
+                handleLogin(username); // set isLoggedIn and loggedInUsername
+                socket.emit("join_room", "1234"); // join the room "1234"
+                // setTimeout(() => {
+                //     window.location.href = "/";
+                // }, 3000);
             })
             .catch(function (error) {
                 console.log(error);
@@ -64,6 +90,10 @@ const Login = ({t,i18n}) => {
                 });
             });
     };
+
+    if (isLoggedIn) {
+        return <Chat socket={socket} username={loggedInUsername} room={room} />;
+    }
 
     return (
         <Container className="mt-5">
@@ -127,6 +157,7 @@ const Login = ({t,i18n}) => {
                                 </Grid>
                             </Grid>
                         </Box>
+                        {isLoggedIn && <Chat socket={socket} username={loggedInUsername} room={room} />}
                     </Box>
                 </Col>
             </Row>
