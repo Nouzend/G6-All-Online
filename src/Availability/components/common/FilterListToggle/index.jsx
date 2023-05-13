@@ -35,7 +35,7 @@ const useStyles = makeStyles({
   },
 });
 
-const FilterListToggle = ({ options, value, selectToggle }) => {
+const FilterListToggle = ({i18n,t,options, value, selectToggle }) => {
   const classes = useStyles();
   return (
     <ToggleButtonGroup

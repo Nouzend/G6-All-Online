@@ -6,7 +6,7 @@ import List from '../../components/Home/List';
 import { dataList } from '../../constants';
 import './styles.css';
 
-const Tipchumporn = () => {
+const Tipchumporn = ({i18n,t}) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedRating, setSelectedRating] = useState(null);
   const [selectedPrice, setSelectedPrice] = useState([0, 5000]);
@@ -96,12 +96,14 @@ const Tipchumporn = () => {
   }, [selectedRating, selectedCategory, cuisines, searchInput, selectedPrice]);
 
   return (
-    <div className='home'>
+    <div className="home">
       {/* Search Bar */}
-      <div className='home_panelList-wrap'>
+      <div className="home_panelList-wrap">
         {/* Filter Panel */}
-        <div className='home_panel-wrap'>
+        <div className="home_panel-wrap">
           <FilterPanel
+            t={t}
+            i18n={i18n}
             selectedCategory={selectedCategory}
             selectCategory={handleSelectCategory}
             selectedRating={selectedRating}
@@ -113,7 +115,7 @@ const Tipchumporn = () => {
           />
         </div>
         {/* List & Empty View */}
-        <div className='home_list-wrap'>
+        <div className="home_list-wrap">
           {resultsFound ? <List list={list} /> : <EmptyView />}
         </div>
       </div>
