@@ -1,3 +1,4 @@
+// สิริญาดา รัตนสิทธิ์ จ๋า
 import React, { useState, useEffect } from 'react';
 
 export const getComments = async () => {
