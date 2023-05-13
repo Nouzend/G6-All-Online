@@ -4,6 +4,7 @@ import Head from "./Head"
 import Search from "./Search"
 import Navbar from "./Navbar"
 
+// นายศิวกร สนธิวา(เมฆ)
 const Header = ({ CartItem,t,i18n }) => {
   const [results, setResults] = useState([]);
 

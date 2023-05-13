@@ -31,6 +31,7 @@ function App() {
   const { productItems } = Data
   const { shopItems } = Sdata
 
+  // นายศิวกร สนธิวา(เมฆ)
   const [CartItem, setCartItem] = useState([])
   const { t, i18n } = useTranslation();
   const addToCart = (product) => {
