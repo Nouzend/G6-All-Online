@@ -10,6 +10,7 @@ import Navbar from "./sup-compo/navbar/navbarMain";
 import Navbar2 from "./sup-compo/navbar/navbarTest";
 import "./CSS/App.css";
 import Header from "../Chachaphong/header/Header.jsx"
+import Comment from "../AppCom"
 
 const Products = (productType) => {
 
@@ -63,13 +64,7 @@ const Products = (productType) => {
               <h3>คะแนนสินค้า</h3>
             </div>
             <div>
-              <form>
-                <label>
-                  ความคิดเห็นของคุณ
-                  <input type="text" text="text" />
-                </label>
-                <input type="submit" value="ส่งความคิดเห็น" />
-              </form>
+              <Comment />
             </div>
           </div>
         </>
