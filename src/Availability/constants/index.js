@@ -1,4 +1,4 @@
-export const dataList = [
+export const dataList =  [
   {
     id: 1,
     title: 'บิ็กโคล่า 24 ขวด',

@@ -53,7 +53,7 @@ const Pages = ({ t, i18n }) => {
     <>
       <Header CartItem={products} t={t} i18n={i18n} />
       <Home t={t} i18n={i18n} />
-      <Tipchumporn />
+      <Tipchumporn t={t} />
       <Shop products={products} t={t} />
       {/* //อ๋อง */}
       <div
