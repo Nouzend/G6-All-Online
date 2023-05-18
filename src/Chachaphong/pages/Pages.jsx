@@ -4,7 +4,7 @@ import Shop from "../shops/Shop";
 import Header from "../header/Header";
 import axios from "axios";
 import { FaComments } from "react-icons/fa";
-import Chat from "../Phonlawat/Chat";
+import Chat from "../LiveChat/Chat";
 import Tipchumporn from "../../Availability/pages/Home";
 import { useLocation } from "react-router-dom";
 import io from "socket.io-client";
@@ -47,6 +47,7 @@ const Pages = ({ t, i18n }) => {
   const handleMessageSent = () => {
     setIsOpen(true);
   };
+  
 
   return (
     // นายศิวกร สนธิวา(เมฆ)

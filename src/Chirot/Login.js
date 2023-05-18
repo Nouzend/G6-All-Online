@@ -12,7 +12,7 @@ import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import Chat from '../Chachaphong/Phonlawat/Chat'
+import Chat from '../Chachaphong/LiveChat/Chat'
 import io from "socket.io-client";
 import { useHistory } from "react-router-dom";
 
@@ -45,8 +45,10 @@ function Login({t,i18n}) {
         setLoggedInUsername(username);
         socket.emit("join_room", room); // join the room "1234"
         history.push(`/?username=${username}&room=${room}`);//ส่ง username และ room ไปในรูปของ path
+        localStorage.setItem("username", username);
     };
 
+    
     const handleUsername = (e) => {
         setUsername(e.target.value);
     };
@@ -79,9 +81,9 @@ function Login({t,i18n}) {
                 });
                 handleLogin(username); // set isLoggedIn and loggedInUsername
                 socket.emit("join_room", "1234"); // join the room "1234"
-                // setTimeout(() => {
-                //     window.location.href = "/";
-                // }, 3000);
+                setTimeout(() => {
+                    window.location.href = "/";
+                }, 3000);
             })
             .catch(function (error) {
                 console.log(error);

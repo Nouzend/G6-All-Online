@@ -4,6 +4,8 @@ import { ImSearch } from "react-icons/im";
 import { Link } from "react-router-dom"
 import Example from "../../Metha/cart";
 import i18next from "i18next";
+import { useHistory } from "react-router-dom";
+
 
 //เมฆ
 const languages = [
@@ -39,6 +41,9 @@ const GlobeIcon = () => (
 
 const Search = ({ onSearch,CartItem,t,i18n }) => {
   const [query, setQuery] = useState("");
+  const history = useHistory();
+  
+
 
 
   const handleSubmit = (event) => {
@@ -50,14 +55,22 @@ const Search = ({ onSearch,CartItem,t,i18n }) => {
     const search = document.querySelector(".search")
     search.classList.toggle("active", window.scrollY > 120)
   })
-  const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    fetch("/api/user")
-      .then((res) => res.json())
-      .then((data) => setUser(data.user))
-      .catch((err) => console.log(err));
-  }, []);
+  const [user, setUser] = useState(null);
+  
+
+useEffect(() => {
+  const username = localStorage.getItem("username");
+  setUser(username);
+}, []);
+
+const logout = () => {
+  localStorage.removeItem("username");
+  setUser(null);
+  history.push("/");
+};
+
+
 
   return (
     <>
@@ -126,7 +139,10 @@ const Search = ({ onSearch,CartItem,t,i18n }) => {
             <a href="/register">{t("สมัครสมาชิก")}</a>
             <FiUser />
             {user ? (
-              <p>{user.name}</p>
+              <div>
+              <p>{user}</p>
+              <button onClick={logout}>{t("ออกจากระบบ")}</button>
+              </div>
             ) : (
               <a href="/login">{t("เข้าสู่ระบบ")}</a>
             )}
