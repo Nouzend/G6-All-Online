@@ -25,6 +25,7 @@ const FilterPanel = ({i18n,t,
           key={cuisine.id}
           cuisine={cuisine}
           changeChecked={changeChecked}
+          t={t}
         />
       ))}
     </div>

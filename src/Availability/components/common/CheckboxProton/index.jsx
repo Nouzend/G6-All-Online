@@ -25,7 +25,7 @@ const useStyles = makeStyles({
   },
 });
 
-const CheckboxProton = ({ changeChecked, cuisine }) => {
+const CheckboxProton = ({ changeChecked, cuisine,t }) => {
   const classes = useStyles();
   const { checked, label, id } = cuisine;
   return (
@@ -47,7 +47,7 @@ const CheckboxProton = ({ changeChecked, cuisine }) => {
             inputProps={{ 'aria-label': 'checkbox with small size' }}
           />
         }
-        label={label}
+        label={t(label)}
       />
     </div>
   );

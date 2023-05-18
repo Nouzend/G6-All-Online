@@ -13,9 +13,9 @@ const Tipchumporn = ({i18n,t}) => {
 
   const [cuisines, setCuisines] = useState([
     { id: 1, checked: false, label: 'โค้ก' },
-    { id: 2, checked: false, label: 'เป็บซี่' },
+    { id: 2, checked: false, label: 'เป็ปซี่' },
     { id: 3, checked: false, label: 'เอสโคล่า' },
-    { id: 4, checked: false, label: 'เเฟนต้า' },
+    { id: 4, checked: false, label: 'แฟนต้า' },
     { id: 5, checked: false, label: 'บิ็กโคล่า' },
   ]);
 
