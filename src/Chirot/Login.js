@@ -82,8 +82,9 @@ function Login({t,i18n}) {
                 handleLogin(username); // set isLoggedIn and loggedInUsername
                 socket.emit("join_room", "1234"); // join the room "1234"
                 setTimeout(() => {
-                    window.location.href = "/";
-                }, 3000);
+                    const newURL = `/?username=${username}&room=${room}`;
+                    window.location.href = newURL;
+                  }, 3000);
             })
             .catch(function (error) {
                 console.log(error);
